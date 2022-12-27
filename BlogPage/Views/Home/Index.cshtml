@@ -1,0 +1,30 @@
+﻿@using BlogPage.Models.EntityFramework
+@model List<BlogPage.Models.EntityFramework.Labour>
+@{
+    ViewBag.Title = "Job List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" id="joblist">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Jobs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Job</td>
+                    <td> <a class="btn btn-primary" href="/Home/Index/@item.ID">Update</a></td>
+                    <td> <a class="btn btn-warning" href="/Home/Index/@item.ID">Delete</a></td>
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+</div>
